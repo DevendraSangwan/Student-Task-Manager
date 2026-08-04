@@ -1,13 +1,12 @@
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <nav className="navbar">
-      <div className="brand">Smart Daily Task Manager</div>
-      <ul className="nav-links">
-        <li><NavLink to="/" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Home</NavLink></li>
-        <li><NavLink to="/tasks" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Tasks</NavLink></li>
-        <li><NavLink to="/about" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>About</NavLink></li>
+    <nav style={{ background: '#f3f3f3', padding: '12px 20px' }}>
+      <ul style={{ display: 'flex', gap: '16px', listStyle: 'none', margin: 0, padding: 0 }}>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/tasks">Tasks</Link></li>
+        <li><Link to="/about">About</Link></li>
       </ul>
     </nav>
   );

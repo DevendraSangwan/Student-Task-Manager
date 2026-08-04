@@ -4,12 +4,12 @@ const Home = ({ tasks = [] }) => {
   const totalTasks = tasks.length;
 
   return (
-    <div className="page-card hero-card">
+    <div>
       <h1>Welcome to Smart Daily Task Manager</h1>
       <p>This app helps you organize your daily study, coding, health, and personal tasks.</p>
       <h3>Today Date: {new Date().toLocaleDateString()}</h3>
       <h4>
-        {totalTasks === 0 ? 'No Tasks Available' : `You have ${totalTasks} task${totalTasks > 1 ? 's' : ''} for today.`}
+        {totalTasks === 0 ? 'No Tasks Available' : `You have ${totalTasks} tasks for today.`}
       </h4>
     </div>
   );

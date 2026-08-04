@@ -1,12 +1,12 @@
 const TaskForm = ({ formData, handleChange, handleSubmit }) => {
   return (
-    <form onSubmit={handleSubmit} className="task-form">
+    <form onSubmit={handleSubmit} style={{ display: 'grid', gap: '10px', marginBottom: '20px' }}>
       <input
         type="text"
         name="title"
         value={formData.title}
         onChange={handleChange}
-        placeholder="Enter task title"
+        placeholder="Task Title"
       />
 
       <select name="category" value={formData.category} onChange={handleChange}>

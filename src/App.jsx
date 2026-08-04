@@ -38,7 +38,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Navbar />
-      <main className="app-shell">
+      <main style={{ maxWidth: '900px', margin: '0 auto', padding: '20px' }}>
         <Routes>
           <Route path="/" element={<Home tasks={tasks} />} />
           <Route
