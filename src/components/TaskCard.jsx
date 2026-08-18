@@ -1,17 +1,31 @@
 const TaskCard = ({ task, onComplete, onDelete }) => {
   return (
-    <div style={{ border: '1px solid #ddd', borderRadius: '8px', padding: '16px' }}>
-      <h3>{task.title}</h3>
-      <p><strong>Category:</strong> {task.category}</p>
-      <p><strong>Priority:</strong> {task.priority}</p>
-      <p><strong>Status:</strong> {task.status}</p>
+    <div className={`task-card ${task.status === 'Completed' ? 'completed' : ''}`}>
+      <div className="task-card-header">
+        <h3 className="task-title">{task.title}</h3>
+        <span className={`task-status ${task.status.toLowerCase()}`}>{task.status}</span>
+      </div>
 
-      <div style={{ display: 'flex', gap: '10px', marginTop: '10px' }}>
-        <button onClick={() => onComplete(task.id)} disabled={task.status === 'Completed'}>
+      <div className="task-meta">
+        <p>
+          <strong>Category:</strong> {task.category}
+        </p>
+        <p>
+          <strong>Priority:</strong> {task.priority}
+        </p>
+      </div>
+
+      <div className="task-actions">
+        <button
+          className="task-button complete"
+          onClick={() => onComplete(task.id)}
+          disabled={task.status === 'Completed'}
+        >
           {task.status === 'Completed' ? 'Completed' : 'Complete'}
         </button>
-        <button onClick={() => onDelete(task.id)}>Delete</button>
-        <button onClick={() => onEdit(task.id)}>Edit</button>
+        <button className="task-button delete" onClick={() => onDelete(task.id)}>
+          Delete
+        </button>
       </div>
     </div>
   );

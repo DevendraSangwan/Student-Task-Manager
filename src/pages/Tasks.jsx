@@ -26,8 +26,12 @@ const Tasks = ({ tasks = [], addTask, completeTask, deleteTask }) => {
   };
 
   return (
-    <div>
-      <h1>Tasks</h1>
+    <div className="content-card tasks-page">
+      <div className="section-heading">
+        <h1 className="page-title">Tasks</h1>
+        <span className="badge">{tasks.length} items</span>
+      </div>
+
       <TaskForm
         formData={formData}
         handleChange={handleChange}
@@ -35,16 +39,15 @@ const Tasks = ({ tasks = [], addTask, completeTask, deleteTask }) => {
       />
 
       {tasks.length === 0 ? (
-        <p>No Tasks Available</p>
+        <p className="empty-state">No Tasks Available</p>
       ) : (
-        <div style={{ display: 'grid', gap: '12px' }}>
+        <div className="task-list">
           {tasks.map((task) => (
             <TaskCard
               key={task.id}
               task={task}
               onComplete={completeTask}
               onDelete={deleteTask}
-            //   onEdit={onEdit}
             />
           ))}
         </div>

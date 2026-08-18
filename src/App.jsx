@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import './App.css';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import About from './pages/About';
@@ -12,13 +13,13 @@ const App = () => {
 
   const addTask = (task) => {
     setTasks((prevTasks) => [
-      ...prevTasks,    
+      ...prevTasks,
       {
-        id: Date.now(),   
+        id: Date.now(),
         title: task.title,
         category: task.category,
         priority: task.priority,
-        status: 'Pending',    
+        status: 'Pending',
       },
     ]);
   };
@@ -37,25 +38,27 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <Navbar />
-      <main style={{ maxWidth: '900px', margin: '0 auto', padding: '20px' }}>
-        <Routes>
-          <Route path="/" element={<Home tasks={tasks} />} />
-          <Route
-            path="/tasks"
-            element={
-              <Tasks
-                tasks={tasks}
-                addTask={addTask}
-                completeTask={completeTask}
-                deleteTask={deleteTask}
-              />
-            }
-          />
-          <Route path="/about" element={<About />} />
-        </Routes>
-      </main>
-      <Footer />
+      <div className="app-shell">
+        <Navbar />
+        <main className="page-container">
+          <Routes>
+            <Route path="/" element={<Home tasks={tasks} />} />
+            <Route
+              path="/tasks"
+              element={
+                <Tasks
+                  tasks={tasks}
+                  addTask={addTask}
+                  completeTask={completeTask}
+                  deleteTask={deleteTask}
+                />
+              }
+            />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 };

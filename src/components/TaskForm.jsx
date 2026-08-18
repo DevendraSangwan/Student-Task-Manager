@@ -1,7 +1,8 @@
 const TaskForm = ({ formData, handleChange, handleSubmit }) => {
   return (
-    <form onSubmit={handleSubmit} style={{ display: 'grid', gap: '10px', marginBottom: '20px' }}>
+    <form onSubmit={handleSubmit} className="task-form">
       <input
+        className="task-form-input"
         type="text"
         name="title"
         value={formData.title}
@@ -9,20 +10,22 @@ const TaskForm = ({ formData, handleChange, handleSubmit }) => {
         placeholder="Task Title"
       />
 
-      <select name="category" value={formData.category} onChange={handleChange}>
+      <select className="task-form-select" name="category" value={formData.category} onChange={handleChange}>
         <option value="Study">Study</option>
         <option value="Coding">Coding</option>
         <option value="Personal">Personal</option>
         <option value="Health">Health</option>
       </select>
 
-      <select name="priority" value={formData.priority} onChange={handleChange}>
+      <select className="task-form-select" name="priority" value={formData.priority} onChange={handleChange}>
         <option value="High">High</option>
         <option value="Medium">Medium</option>
         <option value="Low">Low</option>
       </select>
 
-      <button type="submit">Add Task</button>
+      <button className="task-form-button" type="submit">
+        Add Task
+      </button>
     </form>
   );
 };
