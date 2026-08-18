@@ -12,7 +12,7 @@ const App = () => {
 
   const addTask = (task) => {
     setTasks((prevTasks) => [
-      ...prevTasks,
+      ...prevTasks,    
       {
         id: Date.now(),
         title: task.title,
