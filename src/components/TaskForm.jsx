@@ -23,9 +23,7 @@ const TaskForm = ({ formData, handleChange, handleSubmit }) => {
         <option value="Low">Low</option>
       </select>
 
-      <button className="task-form-button" type="submit">
-        Add Task
-      </button>
+      <button className="task-form-button" type="submit">Add Task</button>
     </form>
   );
 };

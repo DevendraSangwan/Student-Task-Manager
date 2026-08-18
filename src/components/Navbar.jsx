@@ -5,19 +5,13 @@ const Navbar = () => {
     <nav className="navbar">
       <ul className="nav-list">
         <li>
-          <NavLink to="/" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-            Home
-          </NavLink>
+          <NavLink to="/" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>Home</NavLink>
         </li>
         <li>
-          <NavLink to="/tasks" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-            Tasks
-          </NavLink>
+          <NavLink to="/tasks" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>Tasks</NavLink>
         </li>
         <li>
-          <NavLink to="/about" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-            About
-          </NavLink>
+          <NavLink to="/about" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>About</NavLink>
         </li>
       </ul>
     </nav>
