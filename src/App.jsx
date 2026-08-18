@@ -14,7 +14,7 @@ const App = () => {
     setTasks((prevTasks) => [
       ...prevTasks,    
       {
-        id: Date.now(),
+        id: Date.now(),   
         title: task.title,
         category: task.category,
         priority: task.priority,
