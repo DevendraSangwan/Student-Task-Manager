@@ -24,9 +24,7 @@ const SearchBar = ({ searchTerm, setSearchTerm }) => {
           type="button"
           onClick={handleClear}
           className="secondary-btn small-btn"
-        >
-          Clear
-        </button>
+        >Clear</button>
       )}
     </div>
   );

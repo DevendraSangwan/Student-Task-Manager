@@ -7,6 +7,7 @@ import About from './pages/About';
 import Home from './pages/Home';
 import Tasks from './pages/Tasks';
 import tasksData from './data/db';
+import SearchBar from "./components/SearchBar.jsx"
 
 const App = () => {
   const [tasks, setTasks] = useState(tasksData);
