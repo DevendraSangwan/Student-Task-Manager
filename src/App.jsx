@@ -18,7 +18,7 @@ const App = () => {
         title: task.title,
         category: task.category,
         priority: task.priority,
-        status: 'Pending',
+        status: 'Pending',    
       },
     ]);
   };
