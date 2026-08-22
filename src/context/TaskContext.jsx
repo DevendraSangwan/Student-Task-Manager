@@ -1,8 +1,7 @@
-import { createContext, useReducer } from "react";
+import { useReducer } from "react";
 import tasksData from "../data/db";
 import taskReducer from "../reducers/taskReducer";
-
-export const TaskContext = createContext();
+import TaskContext from "./taskContext";
 
 const TaskProvider = ({ children }) => {
   const [tasks, dispatch] = useReducer(taskReducer, tasksData);

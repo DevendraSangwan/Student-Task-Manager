@@ -1,4 +1,3 @@
-import React from 'react';
 
 const Home = ({ tasks = [] }) => {
   const totalTasks = tasks.length;
